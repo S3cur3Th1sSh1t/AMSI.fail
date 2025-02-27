@@ -1,9 +1,8 @@
  # AMSI.fail 
-C# Azure Function with an HTTP trigger that generates obfuscated PowerShell snippets that break or disable AMSI for the current process.
+Originally C# Azure Function (Later ported to JS) with an HTTP trigger that generates obfuscated PowerShell snippets that break or disable AMSI for the current process.
 The snippets are randomly selected from a small pool of techniques/variations before being obfuscated. Every snippet is obfuscated at runtime/request so that no generated output share the same signatures.
  
-Checkout https://www.amsi.fail/ for a live and working demo!
-
+Checkout https://amsi.fail/ for a live and working demo!
 
 # What is AMSI?
 
@@ -19,3 +18,7 @@ To put this into context, consider the following steps PowerShell takes to integ
 - If the content is deemed malicious, it would be blocked.
 
 Since AMSI relies on being loaded within the process executing the actual script, techniques to break or patch specific functions within amsi.dll are well known.
+
+# Contributors / Kudos
+- Special thanks to @S3cur3Th1sSh1t for adding the @rasta-mouse C# bypass
+- Also MAJOR thanks to @MartinIngesen for porting the C# project into JS , reduced cost and increased speed!
